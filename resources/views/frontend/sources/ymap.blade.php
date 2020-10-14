@@ -3,9 +3,17 @@
     // Функция ymaps.ready() будет вызвана, когда
     // загрузятся все компоненты API, а также когда будет готово DOM-дерево.
     ymaps.ready(init);
-    function init(){
-        // Создание карты.
-        var myMap = new ymaps.Map("ymap", {
+    function init() {
+
+        let destinations = {
+            'Москва': [55.753559, 37.609218],
+            'Санкт-Петербург': [59.938531, 30.313497],
+            'Sochi': [43.607494, 39.741163],
+            'Krasnodar': [45.042158, 38.941447]
+        }
+
+        // Создание карты
+        let myMap = new ymaps.Map("ymap", {
             center: [43.607494, 39.741163],
             // Уровень масштабирования. Допустимые значения:
             // от 0 (весь мир) до 19.
@@ -15,7 +23,7 @@
         });
 
         // Краснодар
-        myMap.geoObjects.add(new ymaps.Placemark([45.042158, 38.941447], {
+        myMap.geoObjects.add(new ymaps.Placemark(destinations.Krasnodar, {
             //balloonContent: 'цвет <strong>красный</strong>',
             //iconCaption: 'Салон окон "Алиро"'
         }, {
@@ -23,7 +31,7 @@
         }));
 
         // Сочи
-        myMap.geoObjects.add(new ymaps.Placemark([43.607494, 39.741163], {
+        myMap.geoObjects.add(new ymaps.Placemark(destinations.Sochi, {
             //balloonContent: 'цвет <strong>красный</strong>',
             //iconCaption: 'Салон окон "Алиро"'
         }, {
@@ -33,5 +41,26 @@
         myMap.behaviors.disable('scrollZoom');
         myMap.behaviors.disable('drag');
         //ymapProduction.behaviors.disable('drag');
+
+        // обработка переключения карты
+        function clickGoto() {
+
+            // город
+            let pos = this.getAttribute('data-goto'); // или this.getAttribute('title')
+
+            // переходим по координатам
+            myMap.panTo(destinations[pos], {
+                flying: 1
+            });
+
+            return false;
+        }
+
+        // навешиваем обработчики
+        let col = document.getElementsByClassName('js-goto');
+        for (let i = 0, n = col.length; i < n; ++i) {
+            col[i].onclick = clickGoto;
+        }
+
     }
 </script>
