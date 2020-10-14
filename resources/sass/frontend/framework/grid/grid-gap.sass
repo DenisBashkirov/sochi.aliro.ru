@@ -1,0 +1,24 @@
+@import "../../../bootstrap"
+
+@each $gap in $sizing
+    +breakpoints(row-gap-#{$gap})
+        grid-row-gap: #{$gap * $step}
+
++breakpoints(row-gap-def)
+    grid-column-gap: $grid-row-gap
+
+
+@each $gap in $sizing
+    +breakpoints(col-gap-#{$gap})
+        grid-column-gap: #{$gap * $step}
+
++breakpoints(col-gap-def)
+    grid-column-gap: $grid-column-gap
+
+
+@each $gap in $sizing
+    +breakpoints(grid-gap-#{$gap})
+        grid-gap: #{$gap * $step}
+
++breakpoints(grid-gap-def)
+    grid-gap: $grid-column-gap

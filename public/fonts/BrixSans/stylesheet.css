@@ -1,0 +1,108 @@
+@font-face {
+    font-family: 'Brix Sans';
+    src: url('BrixSans-ExtraLight.woff2') format('woff2'),
+        url('BrixSans-ExtraLight.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Brix Sans';
+    src: url('BrixSans-MediumItalic.woff2') format('woff2'),
+        url('BrixSans-MediumItalic.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Brix Sans';
+    src: url('BrixSans-Light.woff2') format('woff2'),
+        url('BrixSans-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Brix Sans';
+    src: url('BrixSans-ExtraLightItalic.woff2') format('woff2'),
+        url('BrixSans-ExtraLightItalic.woff') format('woff');
+    font-weight: 200;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Brix Sans';
+    src: url('BrixSans-Bold.woff2') format('woff2'),
+        url('BrixSans-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Brix Sans';
+    src: url('BrixSans-BoldItalic.woff2') format('woff2'),
+        url('BrixSans-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Brix Sans';
+    src: url('BrixSans-RegularItalic.woff2') format('woff2'),
+        url('BrixSans-RegularItalic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Brix Sans';
+    src: url('BrixSans-LightItalic.woff2') format('woff2'),
+        url('BrixSans-LightItalic.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Brix Sans';
+    src: url('BrixSans-BlackItalic.woff2') format('woff2'),
+        url('BrixSans-BlackItalic.woff') format('woff');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Brix Sans';
+    src: url('BrixSans-Regular.woff2') format('woff2'),
+        url('BrixSans-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Brix Sans';
+    src: url('BrixSans-Black.woff2') format('woff2'),
+        url('BrixSans-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Brix Sans';
+    src: url('BrixSans-Medium.woff2') format('woff2'),
+        url('BrixSans-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+

@@ -1,0 +1,5 @@
+@import "../../../bootstrap"
+
+@each $size in (1, 2, 3, 4)
+    +breakpoints(grid-rows-#{$size})
+        grid-template-rows: repeat(#{$size}, minmax(0, 1fr))

@@ -1,0 +1,10 @@
+@import "../../../bootstrap"
+
+$displays: block, inline-block, inline, flex, inline-flex, grid, inline-grid
+
+@each $display in $displays
+    +breakpoints(#{$display})
+        display: #{$display}
+
++breakpoints(hidden)
+    display: none

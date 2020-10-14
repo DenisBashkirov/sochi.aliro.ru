@@ -1,0 +1,39 @@
+@import "../bootstrap";
+
+$folder: '../fonts';
+$icomoon: '/public/fonts/icons/fonts/icomoon';
+
+@font-face {
+    font-family: 'icomoon';
+    src: url($icomoon + '.eot?h2436g');
+    src: url($icomoon + '.eot?h2436g#iefix') format('embedded-opentype'),
+    url($icomoon + '.ttf?h2436g') format('truetype'),
+    url($icomoon + '.woff?h2436g') format('woff'),
+    url($icomoon +'.svg?h2436g#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+@each $font-name, $font-weight in
+        ('ExtraLight', 200),
+        ('Light', 300),
+        ('Regular', 400),
+        ('Medium', 500),
+        ('Bold', 700),
+        ('Black', 900) {
+    $font-family: 'BrixSans';
+    $styles: normal, italic;
+
+    @each $style in $styles {
+        @font-face {
+            font-family: $font-family;
+            font-style: $style;
+            font-weight: $font-weight;
+            font-display: swap;
+            src:
+                url($folder + '/' + $font-family + '/' + $font-family + '-' + $font-name + '.woff') format('woff'),
+                url($folder + '/' + $font-family + '/' + $font-family + '-' + $font-name + '.woff2') format('woff2');
+        }
+    }
+}

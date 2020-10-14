@@ -1,0 +1,9 @@
+@import "../../../bootstrap";
+
+@each $name in
+    (normal, nowrap, pre, pre-line, pre-wrap)
+{
+    @include breakpoints(white-space-#{$name}) {
+        white-space: $name;
+    }
+}

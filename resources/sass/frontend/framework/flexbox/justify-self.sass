@@ -1,0 +1,5 @@
+@import "../../../bootstrap"
+
+@each $align in auto, stretch, center, start, end, baseline, initial, inherit
+    +breakpoints(js-#{$align})
+        justify-self: $align

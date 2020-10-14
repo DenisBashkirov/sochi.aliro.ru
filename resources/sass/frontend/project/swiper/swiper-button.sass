@@ -1,0 +1,25 @@
+@import "../../../bootstrap"
+
+.swiper-button
+    &:after
+        content: none !important
+
+    width: 32px !important
+    height: 32px !important
+    display: inline-flex !important
+    align-items: center !important
+    justify-content: center !important
+    background-color: #fff !important
+    border-radius: 50% !important
+    color: $grey-90 !important
+
+    @media ($breakpoint_sm_max)
+        font-size: 16px !important
+
+
+
+.swiper-button-next
+    transform: rotate(-90deg)
+
+.swiper-button-prev
+    transform: rotate(90deg)

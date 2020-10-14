@@ -1,0 +1,34 @@
+@import "../../../bootstrap"
+
+@each $height in $sizing
+    +breakpoints(h-#{$height})
+        height: #{$height * $step}
+
++breakpoints(h-screen)
+    height: 100vh
+
++breakpoints(h-full)
+    height: 100%
+
++breakpoints(minh-screen)
+    min-height: 100vh
+
+
+
+@for $i from 1 through 100
+    +breakpoints(h-#{$i}vh)
+        height: #{$i}vh
+
+
+@for $i from 1 through 100
+    +breakpoints(h-#{$i}vw)
+        height: #{$i}vw !important
+
+
+
+@each $height in $sizing
+    +breakpoints(h-min-#{$height})
+        min-height: #{$height * $step}
+
++breakpoints(h-min-screen)
+    min-height: 100vh

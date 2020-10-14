@@ -1,0 +1,34 @@
+@import "../../../bootstrap"
+
+@each $width in $sizing
+    +breakpoints(w-#{$width})
+        width: #{$width * $step}
+
++breakpoints(w-screen)
+    width: 100vw
+
++breakpoints(w-full)
+    width: 100%
+
+
+@each $part in (2, 3, 4)
+    +breakpoints(w-1\/#{$part})
+        width: calc( ((100% - ((#{$part - 1}) * #{$grid-column-gap})) / #{$part}) )
+
+
+@for $i from 1 through 12
+    +breakpoints(w-cols-#{$i})
+        width: calc((100% - #{$grid-column-gap * (12 - 1)}) / 12 * #{$i} + #{$grid-column-gap * ($i - 1)})
+        margin-right: $grid-column-gap
+
+[class*="w-cols-"]:last-child
+    margin-right: 0
+
+
+
+@for $i from 1 through 100
+    +breakpoints(w-#{$i}vw)
+        width: #{$i}vw !important
+
+
+

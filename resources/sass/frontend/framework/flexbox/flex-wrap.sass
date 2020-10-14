@@ -1,0 +1,5 @@
+@import "../../../bootstrap"
+
+@each $wrap in wrap, nowrap
+    +breakpoints(flex-#{$wrap})
+        flex-wrap: $wrap

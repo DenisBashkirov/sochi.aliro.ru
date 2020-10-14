@@ -1,0 +1,5 @@
+@import "../../../bootstrap"
+
+@each $align in left, right, center, justify
+    +breakpoints(text-#{$align})
+        text-align: $align

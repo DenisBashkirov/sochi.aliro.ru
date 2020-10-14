@@ -1,0 +1,51 @@
+@import "../../../bootstrap"
+
+@each $size in $sizing
+    +breakpoints(m-#{$size})
+        margin: #{$size * $step}
+
+@each $size in $sizing
+    +breakpoints(mx-#{$size})
+        margin-left: #{$size * $step}
+        margin-right: #{$size * $step}
+
+@each $size in $sizing
+    +breakpoints(my-#{$size})
+        margin-top: #{$size * $step}
+        margin-bottom: #{$size * $step}
+
+@each $size in $sizing
+    +breakpoints(mt-#{$size})
+        margin-top: #{$size * $step}
+
+@each $size in $sizing
+    +breakpoints(mr-#{$size})
+        margin-right: #{$size * $step}
+
+@each $size in $sizing
+    +breakpoints(mb-#{$size})
+        margin-bottom: #{$size * $step}
+
+@each $size in $sizing
+    +breakpoints(ml-#{$size})
+        margin-left: #{$size * $step}
+
++breakpoints(mx-auto)
+    margin-right: auto
+    margin-left: auto
+
++breakpoints(my-auto)
+    margin-top: auto
+    margin-bottom: auto
+
++breakpoints(ml-auto)
+    margin-left: auto
+
++breakpoints(mr-auto)
+    margin-right: auto
+
++breakpoints(mt-auto)
+    margin-top: auto
+
++breakpoints(mb-auto)
+    margin-bottom: auto

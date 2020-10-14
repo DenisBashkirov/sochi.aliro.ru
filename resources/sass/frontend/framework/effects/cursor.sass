@@ -1,0 +1,5 @@
+@import "../../../bootstrap"
+
+@each $cursor in auto, default, pointer, wait, text, move, not-allowed
+    .cursor-#{$cursor}
+        cursor: $cursor

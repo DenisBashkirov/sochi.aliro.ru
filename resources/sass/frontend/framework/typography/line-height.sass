@@ -1,0 +1,11 @@
+@import "../../../bootstrap"
+
+@function strip-units($number)
+    @return $number / ($number * 0 + 1)
+
+$i: 100%
+@while $i <= 300%
+    $n: strip-units($i)
+    +breakpoints(lh-#{$n})
+        line-height: #{$i}
+    $i: $i + 5%

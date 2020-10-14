@@ -1,0 +1,55 @@
+@import "vars"
+
+/*
+/* CONTAINERS
+/*
+
+@mixin container($position: initial)
+  padding-left: calc(#{$grid-column-gap} / 2)
+  padding-right: calc(#{$grid-column-gap} / 2)
+  margin-left: auto
+  margin-right: auto
+  width: 100%
+
+  @media ($breakpoint_md)
+    width: $container_md
+
+  @media ($breakpoint_lg)
+    width: $container_lg
+
+  @media ($breakpoint_xl)
+    width: $container_xl
+
+
+@mixin container-fluid()
+  width: 100%
+  box-sizing: border-box
+
+
+@mixin container-padding()
+    padding-left: calc(#{$grid-column-gap} / 2)
+    padding-right: calc(#{$grid-column-gap} / 2)
+
+
+@mixin overlay()
+    content: ''
+    position: absolute
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+
+
+@mixin breakpoints($class)
+    .#{$class}
+        @content
+
+    @each $bp-slug, $breakpoint in $breakpoints-list
+        .#{$bp-slug}\:#{$class}
+            @media ($breakpoint)
+                @content
+
+    @each $bp-slug, $min, $max in $breakpoints-map_min-max
+        .#{$bp-slug}\:#{$class}
+            @media (#{$min}) and (#{$max})
+                @content

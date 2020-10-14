@@ -1,0 +1,31 @@
+@import "../../../bootstrap"
+
+@each $size in $sizing
+    +breakpoints(p-#{$size})
+        padding: #{$size * $step}
+
+@each $size in $sizing
+    +breakpoints(px-#{$size})
+        padding-left: #{$size * $step}
+        padding-right: #{$size * $step}
+
+@each $size in $sizing
+    +breakpoints(py-#{$size})
+        padding-top: #{$size * $step}
+        padding-bottom: #{$size * $step}
+
+@each $size in $sizing
+    +breakpoints(pt-#{$size})
+        padding-top: #{$size * $step}
+
+@each $size in $sizing
+    +breakpoints(pr-#{$size})
+        padding-right: #{$size * $step}
+
+@each $size in $sizing
+    +breakpoints(pb-#{$size})
+        padding-bottom: #{$size * $step}
+
+@each $size in $sizing
+    +breakpoints(pl-#{$size})
+        padding-left: #{$size * $step}

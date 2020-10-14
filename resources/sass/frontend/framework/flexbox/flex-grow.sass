@@ -1,0 +1,5 @@
+@import "../../../bootstrap"
+
+@each $grow in 0, 1
+    +breakpoints(flex-grow-#{$grow})
+        flex-grow: $grow

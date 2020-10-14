@@ -1,0 +1,5 @@
+@import "../../../bootstrap"
+
+@each $name, $align in (stretch, stretch), (start, flex-start), (center, center), (end, flex-end), (baseline, baseline)
+    +breakpoints(as-#{$name})
+        align-self: $align

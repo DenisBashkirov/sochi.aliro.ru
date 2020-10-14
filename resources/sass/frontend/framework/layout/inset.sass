@@ -1,0 +1,7 @@
+@import "../../../bootstrap"
+
+@each $i in $sizing
+
+    @each $side in (top, right, bottom, left)
+        +breakpoints(#{$side}-#{$i})
+            #{$side}: #{$i * $step}

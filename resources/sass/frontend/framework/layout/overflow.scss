@@ -1,0 +1,20 @@
+@import "../../../bootstrap";
+
+@each $name, $overflow in
+        (hidden, hidden),
+        (auto, auto),
+        (visible, visible),
+        (scroll, scroll) {
+
+    @include breakpoints(overflow-#{$name}) {
+        overflow: #{$overflow};
+    }
+
+    @include breakpoints(overflow-x-#{$name}) {
+        overflow-x: #{$overflow};
+    }
+
+    @include breakpoints(overflow-y-#{$name}) {
+        overflow-y: #{$overflow};
+    }
+}

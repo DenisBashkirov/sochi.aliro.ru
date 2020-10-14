@@ -1,0 +1,5 @@
+@import "../../../bootstrap"
+
+@each $name, $justify in (start, flex-start), (center, center), (end, flex-end), (between, space-between), (around, space-around)
+    +breakpoints(justify-#{$name})
+        justify-content: $justify

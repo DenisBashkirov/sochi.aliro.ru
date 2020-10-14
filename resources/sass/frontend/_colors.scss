@@ -1,0 +1,23 @@
+$black-100: #000;
+$black-90: #151A1C;
+$grey-90: #3E4345;
+$grey-80: #5E6366;
+$grey-30: #babec0;
+$grey-20: #F1F3F4;
+$red-100: #E74040;
+$red-90: #CD3434;
+$white: #fff;
+
+$colors-map:
+    (black-100, $black-100),
+    (black-90, $black-90),
+
+    (grey-90, $grey-90),
+    (grey-80, $grey-80),
+    (grey-30, $grey-30),
+    (grey-20, $grey-20),
+
+    (red-100, $red-100),
+
+    (white, $white)
+

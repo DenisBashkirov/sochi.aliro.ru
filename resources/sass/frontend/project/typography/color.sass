@@ -1,0 +1,5 @@
+@import "../../../bootstrap"
+
+@each $name, $color in $colors-map
+    +breakpoints(color-#{$name})
+        color: $color

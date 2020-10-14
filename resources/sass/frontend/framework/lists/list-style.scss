@@ -1,0 +1,7 @@
+@import "../../../bootstrap";
+
+@each $style in none, circle, disc, square {
+    .list-#{$style} {
+        list-style: $style;
+    }
+}

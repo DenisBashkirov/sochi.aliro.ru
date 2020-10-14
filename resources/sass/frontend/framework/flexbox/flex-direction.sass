@@ -1,0 +1,5 @@
+@import "../../../bootstrap"
+
+@each $name, $direction in (row, row), (row-reverse, row-reverse), (col, column), (col-reverse, column-reverse)
+    +breakpoints(flex-#{$name})
+        flex-direction: $direction

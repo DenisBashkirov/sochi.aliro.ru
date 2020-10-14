@@ -1,0 +1,7 @@
+@import "../../../bootstrap"
+
+$positions: static, fixed, absolute, relative, sticky
+
+@each $pos in $positions
+    +breakpoints(#{$pos})
+        position: #{$pos}

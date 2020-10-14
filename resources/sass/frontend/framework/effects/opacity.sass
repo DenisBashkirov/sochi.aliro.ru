@@ -1,0 +1,5 @@
+@import "../../../bootstrap"
+
+@for $i from 1 through 100
+    +breakpoints(op-#{$i})
+        opacity: #{$i / 100}

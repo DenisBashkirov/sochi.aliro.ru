@@ -1,0 +1,7 @@
+@import "../../../bootstrap";
+
+@each $name, $flow in (row, row), (col, column), (row-dense, row-dense), (col-dense, column-dense) {
+    @include breakpoints(grid-flow-#{$name}) {
+        grid-auto-flow: $flow;
+    }
+}

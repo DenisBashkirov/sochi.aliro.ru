@@ -1,0 +1,10 @@
+@import "../../../bootstrap"
+
+@each $spacing in $sizing
+    +breakpoints(sx-#{$spacing})
+        & > *:not(:first-child)
+            margin-left: #{$spacing * $step}
+
+    +breakpoints(sy-#{$spacing})
+        & > *:not(:first-child)
+            margin-top: #{$spacing * $step}
