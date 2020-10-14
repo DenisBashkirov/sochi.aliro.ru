@@ -1,7 +1,7 @@
 <section class="xs-sm:mt-20 xl:mt-32 xs-sm:py-16 xl:py-20 bg-grey-20">
     <div class="container">
 
-        @component('frontend.components.h2', ['text'=>'Запишитесь на замер'])
+        @component('frontend.components.h2', ['text'=>'Запишитесь на бесплатный замер'])
         @endcomponent
 
         <form class="flex xs-sm:flex-col xl:flex-row xl:flex-end xl:mt-12 xs-sm:sy-6 xl:sx-16" action="{{ route('thanks') }}" method="post">
