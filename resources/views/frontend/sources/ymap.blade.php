@@ -51,7 +51,12 @@
                 flying: 1
             });
 
-            return false;
+            let col = document.getElementsByClassName('js-goto');
+            for (let i = 0, n = col.length; i < n; ++i) {
+                col[i].classList.toggle('color-red-100');
+                col[i].classList.toggle('hover-color-90');
+            }
+            
         }
 
         // навешиваем обработчики
