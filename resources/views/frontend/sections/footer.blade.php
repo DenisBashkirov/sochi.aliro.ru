@@ -6,7 +6,7 @@
             <p class="xs-sm:text-xl xl:text-2xl font-bold">Офисы продаж</p>
 
             <div class="flex flex-col xs-sm:sy-1 xl:sy-2 xl:text-xl">
-                <p class="cursor-pointer js-goto" data-goto="Sochi">г. Сочи, ул. Транспортная, 5, оф. 212</p>
+                <p class="js-goto" data-goto="Sochi">г. Сочи, ул. Транспортная, 5, оф. 212</p>
                 <a href="tel:{{ $company_contacts['phone_href']['sochi'] }}" class="no-underline">{{ $company_contacts['phone']['sochi'] }}</a>
             </div>
 
