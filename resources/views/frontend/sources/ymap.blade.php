@@ -55,8 +55,9 @@
             for (let i = 0, n = col.length; i < n; ++i) {
                 col[i].classList.toggle('color-red-100');
                 col[i].classList.toggle('hover-color-90');
+                col[i].classList.toggle('cursor-pointer');
             }
-            
+
         }
 
         // навешиваем обработчики
