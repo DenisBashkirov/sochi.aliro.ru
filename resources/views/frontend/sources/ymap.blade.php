@@ -52,10 +52,13 @@
             });
 
             let col = document.getElementsByClassName('js-goto');
-            for (let i = 0, n = col.length; i < n; ++i) {
-                col[i].classList.toggle('color-red-100');
-                col[i].classList.toggle('hover-color-90');
-                col[i].classList.toggle('cursor-pointer');
+
+            if (this.classList.contains('color-red-100')) {
+                for (let i = 0, n = col.length; i < n; ++i) {
+                    col[i].classList.toggle('color-red-100');
+                    col[i].classList.toggle('hover-color-red-90');
+                    col[i].classList.toggle('cursor-pointer');
+                }
             }
 
         }
