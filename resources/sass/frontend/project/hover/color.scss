@@ -1,0 +1,11 @@
+@import "../../../bootstrap";
+
+@each $name, $color in $colors-map {
+    @include breakpoints(hover-color-#{$name}) {
+        @media ($breakpoint_xl) {
+            &:hover {
+                color: $color;
+            }
+        }
+    }
+}
