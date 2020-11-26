@@ -14,6 +14,10 @@
                 <p class="cursor-pointer color-red-100 hover-color-red-90 js-goto" data-goto="Krasnodar">г. Краснодар, ул. Калинина, 258</p>
             </div>
 
+            <div class="flex flex-col xs-sm:sy-1 xl:sy-2 xl:text-xl">
+                <p class="cursor-pointer color-red-100 hover-color-red-90 js-goto" data-goto="Krasnodar">г. Новороссийск, ул. Калинина, 258</p>
+            </div>
+
         </div>
 
         <div class="xs-sm:sy-2 xl:sy-4">
