@@ -59,45 +59,63 @@ class FrontendOutputController extends FrontendBaseController
         if ($current_urn == '')
             $current_urn = '/';
 
+        $phones = [
+            'krasnodar' => [
+                'office' => [
+                    'default' => '8 (861) 213-92-92',
+                    'yandex_direct' => '8 (861) 213-92-67',
+                    'google_ads' => '8 (861) 213-92-79'
+                ],
+                'mobile' => [
+                    'default' => '8 (928) 036-04-77',
+                    'yandex_direct' => '8 (928) 036-10-60',
+                    'google_ads' => '8 (928) 036-68-65'
+                ]
+            ],
+            'sochi' => [
+                'office' => [
+                    'default' => '8 (862) 300-01-84',
+                    'yandex_direct' => '8 (862) 277-71-43',
+                    'google_ads' => '8 (862) 277-71-34'
+                ],
+                'mobile' => [
+                    'default' => '8 (928) 036-04-77',
+                    'yandex_direct' => '8 (928) 039-19-77',
+                    'google_ads' => '8 (928) 041-04-69'
+                ]
+            ]
+        ];
+
+        $company_contacts['address'] = [
+            'production' => 'х. Хомуты, Шапсугское шоссе, 75А',
+            'office' => [
+                'krasnodar' => 'г. Краснодар, ул. Калинина, 258',
+                'novoros' => 'г. Новороссийск, ул. Героев-Десантников, 2',
+                'sochi' => 'г. Сочи, ул. Транспортная, 5'
+            ]
+        ];
+
         switch (session('utm_source')) {
 
-            case 'yandex_direct':
-
-                $company_contacts['phone']['mobile'] = '8 (928) 036-10-60';
-                $company_contacts['phone_href']['mobile'] = '89280361060';
-
-                $company_contacts['phone']['krasnodar'] = '8 (861) 213-92-67';
-                $company_contacts['phone_href']['krasnodar'] = '88612139267';
-
-                $company_contacts['phone']['sochi'] = '8 (862) 277-71-43';
-                $company_contacts['phone_href']['sochi'] = '88622777143';
-
+            case 'yandex_direct_sochi':
+                $company_contacts['phone']['office']['krasnodar'] = $phones['krasnodar']['office']['yandex_direct'];
+                $company_contacts['phone']['office']['sochi'] = $phones['sochi']['office']['yandex_direct'];
+                $company_contacts['phone']['mobile']['krasnodar'] = $phones['krasnodar']['mobile']['yandex_direct'];
+                $company_contacts['phone']['mobile']['sochi'] = $phones['sochi']['mobile']['yandex_direct'];
                 break;
 
-            case 'google_ads':
-
-                $company_contacts['phone']['mobile'] = '8 (928) 036-68-65';
-                $company_contacts['phone_href']['mobile'] = '89280366865';
-
-                $company_contacts['phone']['krasnodar'] = '8 (861) 213-92-79';
-                $company_contacts['phone_href']['krasnodar'] = '88612139279';
-
-                $company_contacts['phone']['sochi'] = '8 (862) 277-71-34';
-                $company_contacts['phone_href']['sochi'] = '88622777134';
-
+            case 'google_ads_sochi':
+                $company_contacts['phone']['office']['krasnodar'] = $phones['krasnodar']['office']['google_ads'];
+                $company_contacts['phone']['office']['sochi'] = $phones['sochi']['office']['google_ads'];
+                $company_contacts['phone']['mobile']['krasnodar'] = $phones['krasnodar']['mobile']['google_ads'];
+                $company_contacts['phone']['mobile']['sochi'] = $phones['sochi']['mobile']['google_ads'];
                 break;
 
             default:
-
-                $company_contacts['phone']['mobile'] = '8 (928) 036-04-77';
-                $company_contacts['phone_href']['mobile'] = '89280360477';
-
-                $company_contacts['phone']['krasnodar'] = '8 (861) 213-92-92';
-                $company_contacts['phone_href']['krasnodar'] = '88612139292';
-
-                $company_contacts['phone']['sochi'] = '8 (862) 300-01-84';
-                $company_contacts['phone_href']['sochi'] = '88623000184';
-
+                $company_contacts['phone']['office']['krasnodar'] = $phones['krasnodar']['office']['default'];
+                $company_contacts['phone']['office']['sochi'] = $phones['sochi']['office']['default'];
+                $company_contacts['phone']['mobile']['krasnodar'] = $phones['krasnodar']['mobile']['default'];
+                $company_contacts['phone']['mobile']['sochi'] = $phones['sochi']['mobile']['default'];
                 break;
 
         }
