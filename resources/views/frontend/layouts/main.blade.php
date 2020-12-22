@@ -15,14 +15,15 @@
 
 <body>
 
-    @include('frontend.sections.header')
-    @yield('content')
+@include('frontend.sections.header')
+@yield('content')
 
-    @if(env('APP_ENV') == 'production')
-        @include('frontend.sources.services')
-    @endif
+@if(env('APP_ENV') == 'production')
+    @include('frontend.sources.services')
+@endif
 
 @include('frontend.sources.scripts')
+@yield('page_scripts')
 
 </body>
 </html>
