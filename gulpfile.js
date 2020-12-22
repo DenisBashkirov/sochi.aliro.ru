@@ -9,12 +9,11 @@ const gulpif = require('gulp-if');
 const argv = require('yargs').argv;
 const debug = require('gulp-debug');
 const rjs = require('gulp-requirejs');
-const browserSync = require('browser-sync').create();
 const imagemin = require('gulp-imagemin');
 const webp = require('gulp-webp');
+const postcss = require('gulp-postcss');
 const uncss = require('postcss-uncss');
 const del = require('del');
-let postcss = require('gulp-postcss');
 
 
 sass.compiler = require('node-sass');
@@ -93,7 +92,7 @@ gulp.task('styles', done => {
 });
 
 
-gulp.task('min-css', function () {
+gulp.task('min-css-old', function () {
     return gulp.src(app.sass.common.concat(app.sass.frontend))
         .pipe(sass().on('error', sass.logError))
         .pipe(concat('frontend.min.css'))
@@ -105,7 +104,7 @@ gulp.task('min-css', function () {
 });
 
 
-gulp.task('uncss', function () {
+gulp.task('uncss-old', function () {
 
     let plugins = [
         uncss({
@@ -126,7 +125,7 @@ gulp.task('uncss', function () {
         .pipe(gulp.dest('./public/css'));
 });
 
-gulp.task('build-css', gulp.series('min-css', 'uncss'));
+gulp.task('build-css', gulp.series('min-css-old', 'uncss-old'));
 
 
 
@@ -187,6 +186,85 @@ gulp.task('watch-img', function () {
 
 
 
+
+
+
+gulp.task('sass', () => {
+    return gulp.src(['./resources/sass/**/*.sass', './resources/sass/**/*.scss'])
+        .pipe(sass().on('error', sass.logError))
+        .pipe(concat('main.css'))
+        .pipe(gulp.dest('./public/css/'));
+});
+
+
+
+gulp.task('concat-css', () => {
+    return gulp.src(['./public/css/main.css', './public/fonts/icons/style.css', 'public/libs/aos/aos.css', 'public/libs/fancybox/jquery.fancybox.css'])
+        .pipe(concat('concat.css'))
+        .pipe(gulp.dest('./public/css'));
+});
+
+
+
+gulp.task('uncss', () => {
+
+    let plugins = [
+        uncss({
+            html: [
+                'http://okna.aliro/',
+                'http://okna.aliro/thanks',
+            ],
+            ignore: [
+                /.is-active/,
+                /.swiper*/,
+                '.header--sticky',
+                /.sx-/,
+                /.aos*/,
+                /.no-*/
+            ]
+        })
+    ];
+
+    return gulp.src('./public/css/concat.css')
+        .pipe(postcss(plugins))
+        .pipe(gulp.dest('./public/css'));
+});
+
+gulp.task('min-css', function () {
+    return gulp.src('./public/css/concat.css')
+        .pipe(cleanCSS({
+            level: {
+                1: {
+                    normalizeUrls: false
+                },
+                2: {
+                }
+            }
+        }))
+        .pipe(autoprefixer({
+            cascade: true
+        }))
+        .pipe(concat('concat.min.css'))
+        .pipe(gulp.dest('./public/css'));
+});
+
+
+gulp.task('concat-uncss', gulp.series('concat-css', 'uncss'));
+
+
+gulp.task('img-min', done => {
+    gulp.src('./resources/img/**/*')
+        .pipe(imagemin())
+        .pipe(gulp.dest('./public/img/'))
+    done();
+});
+
+
+gulp.task('webp', () =>
+    gulp.src(['./public/img/**/*.jpg', './public/img/**/*.png'])
+        .pipe(webp())
+        .pipe(gulp.dest('./public/img/'))
+);
 
 
 /*

@@ -32,3 +32,8 @@
 
 +breakpoints(h-min-screen)
     min-height: 100vh
+
+
+@for $i from 1 through 100
+    +breakpoints(h-min-#{$i}vh)
+        min-height: #{$i}vh

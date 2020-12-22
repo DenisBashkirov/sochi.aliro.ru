@@ -1,5 +1,16 @@
 @import "../../../bootstrap"
 
 .title-screen
-    background: url('../public/img/title-screen.png') center no-repeat
     background-size: cover
+
+.title-screen.webp
+    //background: url('../img/title-screen_sm.webp') center no-repeat
+
+    @media ($breakpoint_md)
+        background: url('../img/title-screen.webp') center no-repeat
+
+.title-screen.no-webp
+    background: url('../img/title-screen_sm.webp') center no-repeat
+
+    @media ($breakpoint_md)
+        background: url('../img/title-screen.webp') center no-repeat
