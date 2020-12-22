@@ -31,6 +31,8 @@
 
     </div>
 
-    @include('frontend.sources.ymap')
+@endsection
 
+@section('page_scripts')
+    @include('frontend.sources.ymap')
 @endsection
