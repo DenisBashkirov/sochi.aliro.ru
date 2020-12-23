@@ -1,4 +1,4 @@
-<form class="modal__form flex flex-col xs-sm:w-full xl:w-88 xs-sm:mt-6 xl:mt-12 xs-sm:sy-6 xl:sy-6" action="{{ route('thanks') }}" method="post">
+<form class="modal__form flex flex-col xs-sm:w-full xl:w-88 xl:mt-12 xs-sm:sy-6 xl:sy-6" action="{{ route('thanks') }}" method="post">
     @csrf
 
     <div class="modal__form-body flex flex-col xs-sm:sy-4 xs-sm:sy-6 xl:sy-6">
@@ -17,11 +17,11 @@
 
     </div>
 
+    <button class="button button_solid-red xl:w h-12" type="submit">Готово</button>
+
     <label class="flex flex-row flex-start text-sm">
         <input type="checkbox" name="agreement" checked required>
-        <span class="ml-1 op-80">Согласен на обработку персональных данных в соответствии с <a href="{{ route('personal_data') }}" target="_blank">правилами</a></span>
+        <span class="ml-1 op-80">Согласен на обработку персональных данных в соответствии с <a href="{{ route('personal_data') }}" target="_blank">политикой</a></span>
     </label>
-
-    <button class="button button_solid-red xl:w h-12" type="submit">Готово</button>
 
 </form>
