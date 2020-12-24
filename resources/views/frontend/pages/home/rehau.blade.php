@@ -7,7 +7,7 @@
 
         <div class="xl:w-cols-8 xs-sm:mt-6" data-aos="fade-up">
             <div class="article font-medium">
-                <p>01.07.2020 компания “Индустрия Окон”  переименована в Завод окон ALIRO. Наш завод -  один из лидеров по производству окон на Юге России. Статус официального партнёра гарантирует вам:</p>
+                <p>Наш завод -  один из лидеров по производству окон на Юге России. Статус официального партнёра гарантирует вам:</p>
                 <ul>
                     <li class="flex flex-center flex-row sx-2"><i class="icon-checked color-red-100 texl-xl"></i><span>качество и надёжность продукции</span></li>
                     <li class="flex flex-center flex-row sx-2"><i class="icon-checked color-red-100 texl-xl"></i><span>расширенную гарантию 10 лет</span></li>
