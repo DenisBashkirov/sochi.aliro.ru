@@ -3,7 +3,6 @@
 @section('content')
 
     @include('frontend.pages.home.title-screen')
-    @include('frontend.pages.home.promo')
     @include('frontend.pages.home.features')
     @include('frontend.pages.home.about')
     @include('frontend.pages.home.rehau')
